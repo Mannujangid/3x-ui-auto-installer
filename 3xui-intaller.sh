@@ -128,7 +128,7 @@ echo -e "${GREEN}    УСТАНОВКА ЗАВЕРШЕНА УСПЕШНО!     $
 echo -e "${GREEN}========================================${NC}"
 echo ""
 echo -e "${BLUE}Информация для доступа к панели:${NC}"
-echo -e "${YELLOW}URL:${NC} http://$SERVER_IP:$PORT"
+echo -e "${YELLOW}URL:${NC} http://$SERVER_IP:$PORT/$ENDPOINT"
 echo -e "${YELLOW}Логин:${NC} $LOGIN"
 echo -e "${YELLOW}Пароль:${NC} $PASSWORD"
 echo ""
