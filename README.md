@@ -29,7 +29,7 @@
 
 #### Способ 1: Прямая установка (рекомендуется)
 ```bash
-curl -Ls https://raw.githubusercontent.com/Tsuev/3x-ui-auto-installer/main/3xui-intaller.sh | sudo bash
+curl -Ls https://raw.githubusercontent.com/Tsuev/3x-ui-auto-installer/main/3xui-installer.sh | sudo bash
 ```
 
 #### Способ 2: Скачивание и запуск
