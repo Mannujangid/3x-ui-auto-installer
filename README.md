@@ -21,23 +21,6 @@
 
 ### Установка
 
-1. **Скачайте скрипт:**
-```bash
-wget https://raw.githubusercontent.com/your-repo/3x-ui-auto-installer/main/3xui-intaller.sh
-```
-
-2. **Сделайте скрипт исполняемым:**
-```bash
-chmod +x 3xui-intaller.sh
-```
-
-3. **Запустите установку:**
-```bash
-sudo ./3xui-intaller.sh
-```
-
-### Альтернативный способ запуска
-
 ```bash
 sudo bash <(curl -Ls https://raw.githubusercontent.com/your-repo/3x-ui-auto-installer/main/3xui-intaller.sh)
 ```
