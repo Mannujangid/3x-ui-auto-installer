@@ -81,10 +81,11 @@ sudo ./3xui-intaller.sh
    - Создает резервную копию существующей конфигурации (если есть)
 
 4. **Настройка параметров:**
-   - Устанавливает логин: `admin` (через `x-ui set username`)
-   - Устанавливает пароль: `admin` (через `x-ui set password`)
-   - Настраивает порт: `2053` (через `x-ui set panel-port`)
-   - Настраивает endpoint: `wayvpn` (через `x-ui set web-base-path`)
+   - Устанавливает логин: `admin` (через `/usr/local/x-ui/x-ui setting -username`)
+   - Устанавливает пароль: `admin` (через `/usr/local/x-ui/x-ui setting -password`)
+   - Настраивает порт: `2053` (через `/usr/local/x-ui/x-ui setting -port`)
+   - Настраивает endpoint: `wayvpn` (через `/usr/local/x-ui/x-ui setting -webBasePath`)
+   - Выполняет миграцию базы данных
    - Проверяет примененные настройки
 
 5. **Запуск и проверка:**
@@ -212,13 +213,13 @@ telnet YOUR_SERVER_IP 2053
 #### 5. Неправильные настройки (логин, пароль, порт, endpoint)
 ```bash
 # Проверьте текущие настройки
-x-ui settings
+/usr/local/x-ui/x-ui setting -show true
 
 # Измените настройки вручную
-x-ui set username admin
-x-ui set password admin
-x-ui set panel-port 2053
-x-ui set web-base-path /wayvpn
+/usr/local/x-ui/x-ui setting -username admin -password admin -port 2053 -webBasePath /wayvpn
+
+# Выполните миграцию
+/usr/local/x-ui/x-ui migrate
 
 # Перезапустите службу
 systemctl restart x-ui

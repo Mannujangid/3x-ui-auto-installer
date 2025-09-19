@@ -88,23 +88,20 @@ print_status "Login: $LOGIN"
 print_status "Password: $PASSWORD"
 
 # Настройка панели с заданными параметрами
-print_status "Настройка логина и пароля..."
-x-ui set username "$LOGIN"
-x-ui set password "$PASSWORD"
+print_status "Настройка параметров панели..."
+/usr/local/x-ui/x-ui setting -username "$LOGIN" -password "$PASSWORD" -port "$PORT" -webBasePath "/$ENDPOINT"
 
-print_status "Настройка порта..."
-x-ui set panel-port "$PORT"
-
-print_status "Настройка endpoint..."
-x-ui set web-base-path "/$ENDPOINT"
+# Миграция базы данных
+print_status "Выполнение миграции базы данных..."
+/usr/local/x-ui/x-ui migrate
 
 # Альтернативная настройка через конфигурационный файл (если команды не сработали)
 print_status "Проверка и альтернативная настройка..."
 sleep 2
 
 # Проверяем, применились ли настройки
-CURRENT_PORT=$(x-ui settings | grep "Panel Port" | awk '{print $3}' 2>/dev/null || echo "")
-CURRENT_USER=$(x-ui settings | grep "Username" | awk '{print $2}' 2>/dev/null || echo "")
+CURRENT_PORT=$(/usr/local/x-ui/x-ui setting -show true | grep -Eo 'port: .+' | awk '{print $2}' 2>/dev/null || echo "")
+CURRENT_USER=$(/usr/local/x-ui/x-ui setting -show true | grep -Eo 'username: .+' | awk '{print $2}' 2>/dev/null || echo "")
 
 if [ "$CURRENT_PORT" != "$PORT" ] || [ "$CURRENT_USER" != "$LOGIN" ]; then
     print_warning "Настройки не применились через команды. Пробуем альтернативный способ..."
@@ -136,7 +133,7 @@ fi
 
 echo ""
 echo -e "${BLUE}Текущие настройки панели:${NC}"
-x-ui settings
+/usr/local/x-ui/x-ui setting -show true
 echo ""
 
 # Получение IP адреса сервера
