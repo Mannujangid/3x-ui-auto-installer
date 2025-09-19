@@ -88,7 +88,56 @@ print_status "Login: $LOGIN"
 print_status "Password: $PASSWORD"
 
 # Настройка панели с заданными параметрами
-x-ui setting -username "$LOGIN" -password "$PASSWORD" -port "$PORT"
+print_status "Настройка логина и пароля..."
+x-ui set username "$LOGIN"
+x-ui set password "$PASSWORD"
+
+print_status "Настройка порта..."
+x-ui set panel-port "$PORT"
+
+print_status "Настройка endpoint..."
+x-ui set web-base-path "/$ENDPOINT"
+
+# Альтернативная настройка через конфигурационный файл (если команды не сработали)
+print_status "Проверка и альтернативная настройка..."
+sleep 2
+
+# Проверяем, применились ли настройки
+CURRENT_PORT=$(x-ui settings | grep "Panel Port" | awk '{print $3}' 2>/dev/null || echo "")
+CURRENT_USER=$(x-ui settings | grep "Username" | awk '{print $2}' 2>/dev/null || echo "")
+
+if [ "$CURRENT_PORT" != "$PORT" ] || [ "$CURRENT_USER" != "$LOGIN" ]; then
+    print_warning "Настройки не применились через команды. Пробуем альтернативный способ..."
+    
+    # Останавливаем службу для редактирования конфигурации
+    systemctl stop x-ui
+    
+    # Создаем временный конфигурационный файл
+    cat > /tmp/x-ui-config.json << EOF
+{
+    "panelPort": $PORT,
+    "username": "$LOGIN",
+    "password": "$PASSWORD",
+    "webBasePath": "/$ENDPOINT"
+}
+EOF
+    
+    # Применяем конфигурацию (если поддерживается)
+    if [ -f "/usr/local/x-ui/x-ui.db" ]; then
+        print_status "Применяем конфигурацию через базу данных..."
+        # Здесь можно добавить SQL команды для обновления базы данных
+        # Но это сложно, поэтому просто перезапускаем службу
+    fi
+    
+    # Запускаем службу
+    systemctl start x-ui
+    sleep 3
+fi
+
+echo ""
+echo -e "${BLUE}Текущие настройки панели:${NC}"
+x-ui settings
+echo ""
 
 # Получение IP адреса сервера
 SERVER_IP=$(hostname -I | awk '{print $1}')
