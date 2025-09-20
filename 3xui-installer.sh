@@ -37,6 +37,24 @@ if [[ $EUID -ne 0 ]]; then
    exit 1
 fi
 
+# Проверка операционной системы (только Ubuntu/Debian)
+print_status "Проверка операционной системы..."
+if [ -f /etc/os-release ]; then
+    . /etc/os-release
+    if [[ "$ID" != "ubuntu" && "$ID" != "debian" ]]; then
+        print_error "Этот скрипт поддерживает только Ubuntu и Debian системы."
+        print_error "Обнаружена система: $PRETTY_NAME ($ID)"
+        print_error "Для работы скрипта требуется Ubuntu или Debian."
+        exit 1
+    else
+        print_status "Поддерживаемая система обнаружена: $PRETTY_NAME"
+    fi
+else
+    print_error "Не удалось определить операционную систему."
+    print_error "Этот скрипт поддерживает только Ubuntu и Debian системы."
+    exit 1
+fi
+
 # Проверка интернет-соединения
 print_status "Проверка интернет-соединения..."
 if ! ping -c 1 google.com &> /dev/null; then
